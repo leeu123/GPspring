@@ -1,12 +1,12 @@
 $(document).ready(function(){ 
 	$("article").mouseover(function(){
-		$("article").css("background-image","url('img/party1.jpg')");
+		$("article").css("background-image","url('gp/img/party1.jpg')");
 		$("article").css("transition-duration","1s");
 	});
 }); 
 $(document).ready(function(){ 
 	$("article").mouseout(function(){ 
-		$("article").css("background-image","url('img/party.jpg')");
+		$("article").css("background-image","url('gp/img/party.jpg')");
 		$(this).css("transition-duration","1s");
 	});
 });

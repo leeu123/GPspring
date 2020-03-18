@@ -7,33 +7,28 @@
 <script>
 function login_check()
 {
-var pw = login.pw.value
-var id = login.id.value
-if (id =="")
-{   
-	alert("아이디를 입력하세요");
-	login.id.focus()
+var license = li.license.value
+var licens_length = li.license.value.length
+var num= /^[0-9]{10,10}$/
 
-}else if (pw =="")
+if (license =="")
+{   
+	alert("사업자 번호를 입력하세요");
+	li.license.focus()
+
+}else if (false === num.test(license))
 {
-	alert("비밀번호를 입력하세요");
-	login.pw.focus()
+	alert("숫자만 입력하고 10자를 입력하세요");
+	li.license.focus()
 }
+
 else{
 	
-	document.login.submit();
+	document.li.submit();
 	
 }
 
 }
-
-
-function onEnterSubmit(){
-//엔터키의 경우 13번의 키코드를 가지고 있어서 엔터를 누르게 되면 if문이 작동한다.
-var keyCode = window.event.keyCode;
-if(keyCode==13) login.submit();
-}
-
 
 </script>
 
@@ -41,6 +36,9 @@ if(keyCode==13) login.submit();
 <link rel="stylesheet" type="text/css" href="gp/css/loginstyle.css" />
 <link rel="stylesheet" type="text/css" href="gp/css/infosearch.css" />
 <link rel="stylesheet" type="text/css" href="gp/css/loginpage.css" />
+
+
+
 <link rel="shortcut icon"
 	href="http://simbyone.com/wp-content/uploads/2014/04/3455e6f65c33232a060c28829a49b1cb.png">
 <link rel='stylesheet' type='text/css'
@@ -67,29 +65,20 @@ if(keyCode==13) login.submit();
 	<section style="height: 960px;">
 		<div id="container">
 			<div id="login_box">
-				<form action="loginAction.jsp" method=post id="login" name="login">
+			<span style = "    margin-left: 191px;
+    font-size: 20px;" >사업자등록</span>
+				<form action="licenseInsert.bo?" method=post id="li" name="li">
+				
 					<div id="login_id_textbox">
-						<input type="text" value='' name="id"
-							id="login_idpw_text" placeholder="아이디"
-							onfocus="this.placeholder = ''" onblur="아이디'">
+						<input type="text" value='' name="license"
+							id="login_idpw_text" placeholder="사업자 번호를 입력하세요"
+							onfocus="this.placeholder = ''" maxlength ="10">
+						<input type ="hidden" name="id" value="<%= id%>">	
 					</div>
-					<div id="login_pw_textbox">
-						<input type="password" onkeydown='javascript:onEnterSubmit()' name="pw" id="login_idpw_text"
-							placeholder="비밀번호" onfocus="this.placeholder = ''"
-							onblur="this.placeholder = '비밀번호'">
-					</div>
+	
 					<button onClick="login_check()" type="button"
-						class="btn btn-success" id="login_button">로그인</button>
-					<div id="login_infoserch">
-						<UL style="padding-left: 0px">
-							<li id="infoserch_li"><a href="infosearch"><font
-									size=2px>아이디 찾기</font></a> |</li>
-							<li id="infoserch_li"><a href="infosearch"><font
-									size=2px>비밀번호찾기</font></a></li>
-							<li id="infoserch_li">|<a href="membership"> <font
-									size=2px> 회원가입</font></a></li>
-						</UL>
-					</div>
+						class="btn btn-success" id="login_button">등록</button>
+					
 
 				</form>
 			</div>

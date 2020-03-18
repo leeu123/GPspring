@@ -59,8 +59,8 @@ if(keyCode==13) searchbar.submit();
 					<div class="dropdown">
 						<div class="dropdown-button">파티모집</div>
 						<div class="dropdown-content">
-							<a href="party.jsp">진행중인 파티</a> <a href="party1.jsp">완료된 파티</a> <a
-								href="partyregi.jsp">파티모집</a>
+							<a href="party">진행중인 파티</a> <a href="party1">완료된 파티</a> <a
+								href="partyregi">파티모집</a>
 
 
 						</div>
@@ -75,7 +75,7 @@ if(keyCode==13) searchbar.submit();
 				if (id == "id") { //로그인이 되지 않은 사람들만 이 화면이 보이도록 하기 위해서
 		    	%>
 					<div class="dropdown">
-						<a href="loginpage.jsp"><div class="dropdown-button">로그인</div></a>
+						<a href="loginpage"><div class="dropdown-button">로그인</div></a>
 					</div>
 					<%}else{ %>
 					<div class="dropdown">
@@ -90,7 +90,7 @@ if(keyCode==13) searchbar.submit();
 							
 							<!-- 사업자 확인을 위해 business테이블에 동일한 아이디가 있으면 사업자 등록을 한거기 때문에 세션으로 등록한 아이디를 같이 보낸거 -->
 							<a href="licensefind.bo?id=<%=id%>">식당등록</a> <a
-								href="license.jsp">사업자등록</a> <a href="logoutAction.jsp">로그아웃</a>
+								href="license">사업자등록</a> <a href="logoutAction.jsp">로그아웃</a>
 						</div>
 					</div>
 					<%} %>

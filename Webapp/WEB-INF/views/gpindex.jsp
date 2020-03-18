@@ -46,7 +46,7 @@
 	<div id="wrap_">
 		<div id="slider1" style="margin:30px 5% 30px 5%; width:90%; border-top:solid 1px #d5d5d5;">
 		<table style="width:100%;"><tbody><tr><td width="50%"><p style="margin:30px 0 0 40px;  font-size:0.5cm; font-weight:900; color:#1D8B15; opacity:0.8;"> 믿고 보는 맛집 리스트 </p></td>
-		<td width="50%"><p style="margin:30px 0 0 70px; text-align:right; font-size:0.4cm;"> <a href="masjib.jsp" style="font-weight:700; opacity:0.6; text-decoration: underline;;">리스트 더보기</a></p></td></tr></tbody></table>
+		<td width="50%"><p style="margin:30px 0 0 70px; text-align:right; font-size:0.4cm;"> <a href="masjib" style="font-weight:700; opacity:0.6; text-decoration: underline;;">리스트 더보기</a></p></td></tr></tbody></table>
 			<div class="list" style="margin-bottom:10px;">
 			
 			<div >
@@ -117,7 +117,7 @@
 		</div>
 		<div id="slider2" style="margin:30px 5% 30px 5%; width: 90%; border-top:solid 1px #d5d5d5;">
 		<table style="width:100%;"><tbody><tr><td width="50%"><p style="margin:30px 0 0 40px; font-size:0.5cm; font-weight:900; color:#1D8B15; opacity:0.8;"> 믿고 신청하는 신나는 파티</p></td>
-		<td width="50%"><p style="margin:30px 0 0 70px; text-align:right; font-size:0.4cm;"> <a href="party.jsp" style="font-weight:700; opacity:0.6; text-decoration: underline;">진행중인 파티 보러가기</a></p></td></tr></tbody></table>
+		<td width="50%"><p style="margin:30px 0 0 70px; text-align:right; font-size:0.4cm;"> <a href="party" style="font-weight:700; opacity:0.6; text-decoration: underline;">진행중인 파티 보러가기</a></p></td></tr></tbody></table>
 			<div class="party">
 				<div>
 					<a href="partycate.do?cate=한식"><img src="gp/img/koreaP.jpg"></a><!--  한식 파티 창  -->
