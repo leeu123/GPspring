@@ -3,6 +3,11 @@
 
 <mapper namespace="gpteam">
 
+<!--  로그인 회원정보 있는지 확인 -->
+<select id="login" parameterType="mb" resultType="String">
+select nick from membership where id = #{id} and pw = #{pw};
+</select>
+
 	<!-- 파티 찾아오기 -->
 	<!-- 진행중인 파티 정보 찾아오기 -->
 	<select id="selectParty" parameterType="Integer" resultType="pt">
@@ -76,11 +81,9 @@
 
 
 	<!-- 평점 베스트 10 식당 정보 포함 수정 후 -->
-	<select id="selectmasjip" resultType="rs">
-		select rnum,(select
-		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
-		restaurant order by avg_pyung desc limit 10;
+	<select id="masjiprec" resultType="rs">
+		select rnum,(select avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent,store, postnum, home, dethome, file, readcount from restaurant order by avg_pyung desc limit 10;
 	</select>
 
 
@@ -99,40 +102,44 @@
 	<!-- select resdat.rnum, avg(pyung) as avg_pyung from resdat inner join 
 		restaurant where resdat.rnum = restaurant.rnum and restaurant.type='한식' group 
 		by rnum order by avg(pyung) desc limit 10; -->
-	<select id="selectmasjipkor" resultType="rs">
+	<select id="masjipkor" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where type = '한식' order by avg_pyung desc limit 10;
 	</select>
 
 	<!-- 중식 맛집 베스트 평점 순 --><!-- select resdat.rnum, avg(pyung) as avg_pyung from resdat inner join 
 		restaurant where resdat.rnum = restaurant.rnum and restaurant.type='중식' group 
 		by rnum order by avg(pyung) desc limit 10; -->
-	<select id="selectmasjipchn" resultType="rs">
+	<select id="masjipchn" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where type = '중식' order by avg_pyung desc limit 10;
 	</select>
 
 	<!-- 일식 맛집 베스트 평점 순 --><!-- select resdat.rnum, avg(pyung) as avg_pyung from resdat inner join 
 		restaurant where resdat.rnum = restaurant.rnum and restaurant.type='일식' group 
 		by rnum order by avg(pyung) desc limit 10; -->
-	<select id="selectmasjipjpn" resultType="rs">
+	<select id="masjipjpn" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where type = '일식' order by avg_pyung desc limit 10;
 	</select>
 
 	<!-- 양식 맛집 베스트 평점 순 --><!-- select resdat.rnum, avg(pyung) as avg_pyung from resdat inner join 
 		restaurant where resdat.rnum = restaurant.rnum and restaurant.type='양식' group 
 		by rnum order by avg(pyung) desc limit 10; -->
-	<select id="selectmasjipwest" resultType="rs">
+	<select id="masjipwest" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where type = '양식' order by avg_pyung desc limit 10;
 	</select>
 
@@ -142,7 +149,8 @@
 	<select id="selectmasjipworld" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where type = '세계음식' order by avg_pyung desc limit 10;
 	</select>
 
@@ -152,7 +160,8 @@
 	<select id="selectmasjipwhat" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where type = '뷔페' order by avg_pyung desc limit 10;
 	</select>
 
@@ -161,7 +170,8 @@
 	<select id="selectViewtop" resultType="ad">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant order by readcount desc limit 10;
 	</select>
 
@@ -257,21 +267,21 @@
 		</where>
 		order by avg_pyung desc;
 	</select>
-	<select id="checkres" parameterType="vo.reservationDTO"
-		resultType="vo.reservationDTO">
+	<select id="checkres" parameterType="re"
+		resultType="re">
 		select * from restaurant_res where id = #{id} and rnum =
 		#{rnum};
 	</select>
 
 	<!-- 식당 예약 정보 입력 -->
-	<insert id="reservation" parameterType="vo.reservationDTO">
+	<insert id="reservation" parameterType="re">
 		insert into
 		restaurant_res (rnum, id, resdate, restime ,rdate)
 		values(#{rnum},#{id},#{resdate},#{restime},now());
 	</insert>
 
 	<!-- 식당 예약 취소 -->
-	<delete id="cancel" parameterType="vo.reservationDTO">
+	<delete id="cancel" parameterType="re">
 		delete from restaurant_res
 		where id = #{id} and rnum = #{rnum};
 	</delete>
@@ -395,7 +405,7 @@
 
 	<!-- 로그인한 사람 리뷰 정보 들고 오기 -->
 	<select id="QnA" parameterType="String"
-		resultType="vo.BoardBean">
+		resultType="qn">
 		select * from qnaboard where id = #{id} order by date desc
 		limit 5;
 	</select>
@@ -520,14 +530,14 @@
 	</select>
 
 	<!-- 로그인한 사람 리뷰 정보 들고 오기 -->
-	<select id="QnAall" resultType="vo.BoardBean">
+	<select id="QnAall" resultType="qn">
 		select * from qnaboard order by
 		date desc;
 	</select>
 
 
 	<!-- 로그인한 사람 리뷰 정보 들고 오기 -->
-	<select id="restauall" resultType="vo.DTO_AD">
+	<select id="restauall" resultType="ad">
 		select * from restaurant order
 		by rnum desc;
 	</select>

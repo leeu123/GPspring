@@ -1,5 +1,6 @@
 package com.GPspring.web.vo;
 
+
 public class MembershipDTO { // 회원가입 DTO
 	private String id;
 	private String nick;

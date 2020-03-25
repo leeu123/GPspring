@@ -67,7 +67,7 @@ if(keyCode==13) login.submit();
 	<section style="height: 960px;">
 		<div id="container">
 			<div id="login_box">
-				<form action="loginAction.jsp" method=post id="login" name="login">
+				<form action="loginAction" method=post id="login" name="login">
 					<div id="login_id_textbox">
 						<input type="text" value='' name="id"
 							id="login_idpw_text" placeholder="아이디"
@@ -79,7 +79,7 @@ if(keyCode==13) login.submit();
 							onblur="this.placeholder = '비밀번호'">
 					</div>
 					<button onClick="login_check()" type="button"
-						class="btn btn-success" id="login_button">로그인</button>
+						class="btn btn-success" id="login_button">로그인</button> &nbsp;&nbsp;<div style="color:red; text-align:center; font-size:0.5cm;">${message}</div>
 					<div id="login_infoserch">
 						<UL style="padding-left: 0px">
 							<li id="infoserch_li"><a href="infosearch"><font

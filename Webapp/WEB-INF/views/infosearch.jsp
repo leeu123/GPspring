@@ -84,7 +84,7 @@ else{
 <section style = "height : 960px;">
 <div id="container">
 
-<form id="idsearch"  name = "idsearch" action = "idfind.jsp" method = post>
+<form id="idsearch"  name = "idsearch" action = "idfind" method = post>
 
   <div class="form-group">
 
@@ -94,7 +94,7 @@ else{
   <button type = "button" class="btn btn-default" onClick = "id_find()">아이디찾기</button>
 </form>
 
-<form id="pwsearch" name = "pwsearch"action = "pwfind.jsp" method = post>
+<form id="pwsearch" name = "pwsearch"action = "pwfind" method = post>
 <div class="form-group">
     <label for="ID">아이디</label>
     <input type="id" class="form-control" id="id"name = "id" placeholder="아이디를 입력하세요">

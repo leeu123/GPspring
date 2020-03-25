@@ -1,7 +1,10 @@
 package com.GPspring.web.controll;
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
 
 @Controller
 public class foodController {
@@ -10,6 +13,12 @@ public class foodController {
 	public String index() { // 인덱스 페이지
 		
 		return "/WEB-INF/views/gpindex.jsp"; // 자기가 만든 jsp 파일 경로
+	}
+	
+	@RequestMapping("/aboutus")
+	public String aboutus() { // 맛집리스트 페이지
+		
+		return "/WEB-INF/views/aboutus.jsp"; // 자기가 만든 jsp 파일 경로
 	}
 	
 	@RequestMapping("/masjib")
@@ -59,5 +68,6 @@ public class foodController {
 		
 		return "/WEB-INF/views/license.jsp"; // 자기가 만든 jsp 파일 경로
 	}
-
+	
+	
 }

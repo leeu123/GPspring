@@ -75,7 +75,7 @@
 			naver.id.select()
 		} else {
 
-			window.open("idcheck.jsp?id=" + naver.id.value, "hjhj",
+			window.open("idcheck?id=" + naver.id.value, "hjhj",
 					"width=300,height=100");
 
 		}
@@ -183,9 +183,9 @@
 
 			<table>
 
-				<FORM name="naver" action="membershipAction.jsp" method=post>
+				<FORM name="naver" action="membershipAction" method=post>
 					<tr>
-						<td align="center"><a href="gpindex.jsp"><img
+						<td align="center"><a href="index"><img
 								src="gp/img\\gplogo1.png" style="width: 400px; height: 90px"></a>
 						</td>
 					</tr>

@@ -50,34 +50,34 @@
 			<div class="list" style="margin-bottom:10px;">
 			
 			<div >
-					<a href="masjiprec.jsp"><img src="gp/img/avg_pyung1.jpg"></a> <!--  평점순 베스트 10 -->
+					<a href="masjiprec"><img src="gp/img/avg_pyung1.jpg"></a> <!--  평점순 베스트 10 -->
 				</div>
 					<div>
-					<a href="masjipkor.jsp"><img src="gp/img/viewbest1.jpg"></a> <!--  조회수 베스트 10 -->
+					<a href="masjipkor"><img src="gp/img/viewbest1.jpg"></a> <!--  조회수 베스트 10 -->
 				</div>
 
 				<div>
-					<a href="masjipkor.jsp"><img src="gp/img/korbest1.jpg"></a> <!--  한식 베스트 10 -->
+					<a href="masjipkor"><img src="gp/img/korbest1.jpg"></a> <!--  한식 베스트 10 -->
 				</div>
 
 				<div>
-					<a href="masjipchn.jsp"><img src="gp/img/chnbest1.jpg"></a> <!--  중식 베스트 10 -->
+					<a href="masjipchn"><img src="gp/img/chnbest1.jpg"></a> <!--  중식 베스트 10 -->
 				</div>
 
 				<div>
-					<a href="masjipjpn.jsp"><img src="gp/img/jpnbest1.jpg"></a> <!--  일식 베스트 10 -->
+					<a href="masjipjpn"><img src="gp/img/jpnbest1.jpg"></a> <!--  일식 베스트 10 -->
 				</div> 
 
 				<div>
-					<a href="masjipwest.jsp"><img src="gp/img/westbest1.jpg"></a> <!--  양식 베스트 10 -->
+					<a href="masjipwest"><img src="gp/img/westbest1.jpg"></a> <!--  양식 베스트 10 -->
 				</div>
 				
 				<div>
-					<a href="masjipworld.jsp"><img src="gp/img/worldbest1.jpg"></a> <!--  세계음식 베스트 10 -->
+					<a href="masjipworld"><img src="gp/img/worldbest1.jpg"></a> <!--  세계음식 베스트 10 -->
 				</div>
 				
 				<div>
-					<a href="masjipwhat.jsp"><img src="gp/img/whatbest1.jpg"></a> <!--  뷔페 베스트 10 -->
+					<a href="masjipwhat"><img src="gp/img/whatbest1.jpg"></a> <!--  뷔페 베스트 10 -->
 				</div>
 
 				
@@ -86,19 +86,19 @@
 			
 
 				<div>
-					<a href="masjipseoul.jsp"><img src="gp/img/seoulbest1.jpg"></a> <!--  서울 맛집 베스트 10 -->
+					<a href="masjipseoul"><img src="gp/img/seoulbest1.jpg"></a> <!--  서울 맛집 베스트 10 -->
 				</div>
 
 				<div>
-					<a href="masjipdj.jsp"><img src="gp/img/daejeonbest1.jpg"></a><!--  대전 맛집 베스트 10 -->
+					<a href="masjipdj"><img src="gp/img/daejeonbest1.jpg"></a><!--  대전 맛집 베스트 10 -->
 				</div>
 
 				<div>
-					<a href="masjipgj.jsp"><img src="gp/img/gwangjubest1.jpg"></a><!--  광주 맛집 베스트 10 -->
+					<a href="masjipgj"><img src="gp/img/gwangjubest1.jpg"></a><!--  광주 맛집 베스트 10 -->
 				</div>
 				
 				<div>
-					<a href="masjipbs.jsp"><img src="gp/img/busanbest1.jpg"></a><!--  부산 맛집 베스트 10 -->
+					<a href="masjipbs"><img src="gp/img/busanbest1.jpg"></a><!--  부산 맛집 베스트 10 -->
 				</div>
 				
 

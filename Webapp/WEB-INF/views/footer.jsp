@@ -3,9 +3,9 @@
 <head>
 <title>GreenPlate</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400&display=swap&subset=korean" rel="stylesheet">
 
-
-<link rel="stylesheet" type="text/css" href="gp/css/gpstyle2.css">
+<link rel="stylesheet" type="text/css" href="gp/css/footerstyle.css">
 <link rel="stylesheet" type="text/css" href="gp/css/menubar.css">
 <link rel="stylesheet" type="text/css" href="gp/css/loginstyle.css"/>
 
@@ -18,10 +18,10 @@
  <body>
    <div id="footer">
 			<div id="footerinner">
-				<div id="ftleft">
+				<div id="ftleft"">
 					<ul>
 					<li>
-					<a href="aboutus.jsp">GreenPlate 소개</a></li>
+					<a href="aboutus">GreenPlate 소개</a></li>
 						
 						<li>|</li>
 						<li>서비스이용약관 </li>
@@ -32,7 +32,7 @@
 						<li>|</li>
 						<li>고객설문 </li>
 						<li>|</li>
-						<li><a href ="ad.jsp" style ="color : white">광고문의</a></li>
+						<li>광고문의</li>
 						<li>|</li>
 						<li>개인정보처리방침</li>
 					</ul>
