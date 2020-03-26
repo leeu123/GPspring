@@ -86,8 +86,7 @@
 							<td align="left"><a
 								href="restaurantDetail.bo?rnum=<%=rs.get(i).getRnum()%>"><div
 										style="font-size: 0.59cm; color: #353535; font-weight: 600;">
-										<%=(i + 1)%>.&nbsp;<%=rs.get(i).getStore()%><font
-											color="<%=color%>">&nbsp;&nbsp;<%=rs.get(i).getAvg_pyung()%></font>
+										<%=(i + 1)%>.&nbsp;<%=rs.get(i).getStore()%><font color="<%=color%>">&nbsp;&nbsp;<%=rs.get(i).getAvg_pyung()%></font>
 									</div></a></td>
 							<td align="right"><img src="gp/img/readcount.png"
 								style="width: 20px;"> &nbsp;<%= rs.get(i).getReadcount()%></td>

@@ -10,8 +10,9 @@
 <!-- ===================================================== -->
 
 
+
 <head>
-<title>일식 베스트 10</title>
+<title>뷔페 베스트 10</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="gp/css/gpstylemasjip.css">
 <link rel="stylesheet" type="text/css" href="gp/css/loginstyle.css" />
@@ -38,8 +39,8 @@
 
 	<div style="width: 100%; height: 86px;"></div>
 	<article style="background-color: #eaeaea; text-align: center;">
-		<h1 style="margin: 70px 0px 0px 0px; font-size: 1.5cm; color: black;">일식 베스트 10</h1>
-		<h3 style="color: #8C8C8C;">"이 시국에?"</h3>
+		<h1 style="margin: 70px 0px 0px 0px; font-size: 1.5cm; color: black;">뷔페 베스트 10</h1>
+		<h3 style="color: #8C8C8C;">"뷔페에서 배터지게?"</h3>
 	</article>
 	<section style="background: #f6f6f6;">
 		<div id="mat">
@@ -47,13 +48,12 @@
 				style="width: 100%;  background: white; padding-top: 1%; padding-left: 2%; padding-right: 2%; margin: 0 auto;">
 				<div style="width: 50%;  margin: 0 auto;">
 					<table style="width: 100%;">
-						<!--  ================================반복문========================= -->
+					<!--  ================================반복문========================= -->
 						<c:set var="rslist" value="${rslist}" />
 						<%
 						ArrayList<ResdatDTO> rs = (ArrayList<ResdatDTO>)pageContext.getAttribute("rslist") ;
                         
 						for (int i = 0; i < rs.size(); i++) {
-								
 String color;
 								
 								if(rs.get(i).getAvg_pyung()==0){
@@ -109,12 +109,22 @@ String color;
 						<tr style="height: 30px;">
 							<td colspan="3"></td>
 						</tr>
+
 						<%
 							}
 						%>
 						<tr style="height: 50px;">
 							<td colspan="3"></td>
 						</tr>
+
+
+
+
+
+
+
+
+
 
 						<tr>
 							<td colspan="3">
@@ -153,7 +163,6 @@ var listRnum=[
 		
 		'<%=rs.get(i).getRnum()%>',
 		<%}%>
-	
 	
 	
 ];

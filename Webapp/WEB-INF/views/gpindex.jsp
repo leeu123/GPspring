@@ -53,7 +53,7 @@
 					<a href="masjiprec"><img src="gp/img/avg_pyung1.jpg"></a> <!--  평점순 베스트 10 -->
 				</div>
 					<div>
-					<a href="masjipkor"><img src="gp/img/viewbest1.jpg"></a> <!--  조회수 베스트 10 -->
+					<a href="masjipviewtop"><img src="gp/img/viewbest1.jpg"></a> <!--  조회수 베스트 10 -->
 				</div>
 
 				<div>
@@ -120,51 +120,51 @@
 		<td width="50%"><p style="margin:30px 0 0 70px; text-align:right; font-size:0.4cm;"> <a href="party" style="font-weight:700; opacity:0.6; text-decoration: underline;">진행중인 파티 보러가기</a></p></td></tr></tbody></table>
 			<div class="party">
 				<div>
-					<a href="partycate.do?cate=한식"><img src="gp/img/koreaP.jpg"></a><!--  한식 파티 창  -->
+					<a href="partycate?cate=한식"><img src="gp/img/koreaP.jpg"></a><!--  한식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=중식"><img src="gp/img/chinaP.jpg"></a><!--  중식 파티 창  -->
+					<a href="partycate?cate=중식"><img src="gp/img/chinaP.jpg"></a><!--  중식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=일식"><img src="gp/img/japanP.jpg"></a><!--  일식 파티 창  -->
+					<a href="partycate?cate=일식"><img src="gp/img/japanP.jpg"></a><!--  일식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=양식"><img src="gp/img/westernP.jpg"></a><!--  양식 파티 창  -->
+					<a href="partycate?cate=양식"><img src="gp/img/westernP.jpg"></a><!--  양식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=세계음식"><img src="gp/img/worldP.jpg"></a><!--  세계음식 파티 창  -->
+					<a href="partycate?cate=세계음식"><img src="gp/img/worldP.jpg"></a><!--  세계음식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=뷔페"><img src="gp/img/whateverP.jpg"></a><!--  뷔페 파티 창  -->
+					<a href="partycate?cate=뷔페"><img src="gp/img/whateverP.jpg"></a><!--  뷔페 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=한식"><img src="gp/img/koreaP.jpg"></a><!--  한식 파티 창  -->
+					<a href="partycate?cate=한식"><img src="gp/img/koreaP.jpg"></a><!--  한식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=중식"><img src="gp/img/chinaP.jpg"></a><!--  중식 파티 창  -->
+					<a href="partycate?cate=중식"><img src="gp/img/chinaP.jpg"></a><!--  중식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=일식"><img src="gp/img/japanP.jpg"></a><!--  일식 파티 창  -->
+					<a href="partycate?cate=일식"><img src="gp/img/japanP.jpg"></a><!--  일식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=양식"><img src="gp/img/westernP.jpg"></a><!--  양식 파티 창  -->
+					<a href="partycate?cate=양식"><img src="gp/img/westernP.jpg"></a><!--  양식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=세계음식"><img src="gp/img/worldP.jpg"></a><!--  세계음식 파티 창  -->
+					<a href="partycate?cate=세계음식"><img src="gp/img/worldP.jpg"></a><!--  세계음식 파티 창  -->
 				</div>
 				
 				<div>
-					<a href="partycate.do?cate=뷔페"><img src="gp/img/whateverP.jpg"></a><!--  뷔페 파티 창  -->
+					<a href="partycate?cate=뷔페"><img src="gp/img/whateverP.jpg"></a><!--  뷔페 파티 창  -->
 				</div>
 
 				

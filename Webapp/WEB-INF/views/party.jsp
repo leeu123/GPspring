@@ -47,7 +47,7 @@
 			<div id="section" style="border: none;">
 
 				<div class="picbox">
-					<a href="partycate.do?cate=<%=k%>"><div class="partypic"
+					<a href="partycate?cate=<%=k%>"><div class="partypic"
 							name="kor">
 							<div id="korea" align="center"></div>
 						</div>
@@ -55,7 +55,7 @@
 				</div>
 
 				<div class="picbox">
-					<a href="partycate.do?cate=<%=s%>"><div class="partypic"
+					<a href="partycate?cate=<%=s%>"><div class="partypic"
 							name="chn">
 							<div id="china" align="center"></div>
 						</div>
@@ -63,7 +63,7 @@
 				</div>
 
 				<div class="picbox">
-					<a href="partycate.do?cate=<%=j%>"><div class="partypic"
+					<a href="partycate?cate=<%=j%>"><div class="partypic"
 							name="jpn">
 							<div id="japan" align="center"></div>
 						</div>
@@ -71,14 +71,14 @@
 				</div>
 
 				<div class="picbox">
-					<a href="partycate.do?cate=<%=l%>"><div class="partypic" name="wes">
+					<a href="partycate?cate=<%=l%>"><div class="partypic" name="wes">
 							<div id="western" align="center"></div>
 						</div>
 						<div class="pictitle">양 &nbsp;&nbsp;&nbsp; 식</div> </a>
 				</div>
 
 				<div class="picbox">
-					<a href="partycate.do?cate=<%=m%>"><div class="partypic"
+					<a href="partycate?cate=<%=m%>"><div class="partypic"
 							name="wor">
 							<div id="world" align="center"></div>
 						</div>
@@ -86,7 +86,7 @@
 				</div>
 
 				<div class="picbox">
-					<a href="partycate.do?cate=<%=n%>"><div class="partypic"
+					<a href="partycate?cate=<%=n%>"><div class="partypic"
 							name="what">
 							<div id="whatever" align="center"></div>
 						</div>

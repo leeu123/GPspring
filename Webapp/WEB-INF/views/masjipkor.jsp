@@ -9,7 +9,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!-- ===================================================== -->
 
-
 <head>
 <title>2020 한식 베스트 10</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,8 +53,7 @@
 						ArrayList<ResdatDTO> rs = (ArrayList<ResdatDTO>)pageContext.getAttribute("rslist") ;
                         
 						for (int i = 0; i < rs.size(); i++) {
-								
-String color;
+								String color;
 								
 								if(rs.get(i).getAvg_pyung()==0){
 									color = "gray";
@@ -79,14 +77,14 @@ String color;
 
 						<tr style="height: 30px;">
 							<td rowspan="5" style="width: 220px;"><a href="restaurantDetail.bo?rnum=<%=rs.get(i).getRnum()%>"><img
-								src="restaurantUpload/<%=list.get(0)%>" width="200px;"
+								src="gp/restaurantUpload/<%=list.get(0)%>" width="200px;"
 								height="180px"
 								style="border-radius: 5px; border: solid 0.5px gray;"></a></td>
 							<td align="left" ><a
 								href="restaurantDetail.bo?rnum=<%=rs.get(i).getRnum()%>"><div style="font-size: 0.59cm; color: #353535; font-weight: 600;">
 									<%=(i + 1)%>.&nbsp;<%=rs.get(i).getStore()%><font color="<%=color%>">&nbsp;&nbsp;<%=rs.get(i).getAvg_pyung()%></font>
 								</div></a></td>
-								<td align="right"><img src="img/readcount.png" style ="width: 20px;"> &nbsp;<%= rs.get(i).getReadcount()%></td>
+								<td align="right"><img src="gp/img/readcount.png" style ="width: 20px;"> &nbsp;<%= rs.get(i).getReadcount()%></td>
 						</tr>
 						<tr style="height: 30px;">
 							<td align="left"><div style="color: #A6A6A6;" colspan="2">
@@ -104,8 +102,7 @@ String color;
 						<tr style="height: 30px;">
 							<td style="width: 60%"></td>
 							<td align="right"><a
-								href="restaurantDetail.bo?rnum=<%=rs.get(i).getRnum()%>"><h5
-										style="color: #8C8C8C">식당 정보 보러가기&nbsp;&nbsp;></h5></a></td>
+								href="restaurantDetail.bo?rnum=<%=rs.get(i).getRnum()%>"><h5 style="color: #8C8C8C">식당 정보 보러가기&nbsp;&nbsp;></h5></a></td>
 						</tr>
 						<tr style="height: 30px;">
 							<td colspan="3"></td>
@@ -117,15 +114,6 @@ String color;
 						<tr style="height: 50px;">
 							<td colspan="3"></td>
 						</tr>
-
-
-
-
-
-
-
-
-
 
 						<tr>
 							<td colspan="3">

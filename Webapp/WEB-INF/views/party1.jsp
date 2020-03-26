@@ -45,42 +45,42 @@ String s = URLEncoder.encode("중식","UTF-8");
 <div id="section" style="border:none;">
 
 <div class="picbox">
-<a href="partycatere.do?cate=<%=k%>"><div class="partypic" name="kor">
+<a href="partycatere?cate=<%=k%>"><div class="partypic" name="kor">
 <div id="korea" align="center"></div>
 </div><div class="pictitle" >한   &nbsp;&nbsp;&nbsp; 식</div>
 </a>
 </div>
 
 <div class="picbox">
-<a href="partycatere.do?cate=<%=s%>"><div class="partypic" name="chn">
+<a href="partycatere?cate=<%=s%>"><div class="partypic" name="chn">
 <div id="china" align="center"></div>
 </div><div class="pictitle">중   &nbsp;&nbsp;&nbsp; 식</div>
 </a>
 </div>
 
 <div class="picbox">
-<a href="partycatere.do?cate=<%=j%>"><div class="partypic" name="jpn">
+<a href="partycatere?cate=<%=j%>"><div class="partypic" name="jpn">
 <div id="japan" align="center"></div>
 </div><div class="pictitle">일   &nbsp;&nbsp;&nbsp; 식</div>
 </a>
 </div>
 
 <div class="picbox">
-<a href="partycatere.do?cate=<%=l%>"><div class="partypic" name="wes">
+<a href="partycatere?cate=<%=l%>"><div class="partypic" name="wes">
 <div id="western"  align="center"></div>
 </div><div class="pictitle">양   &nbsp;&nbsp;&nbsp; 식</div>
 </a>
 </div>
 
 <div class="picbox">
-<a href="partycatere.do?cate=<%=m%>"><div class="partypic" name="wor">
+<a href="partycatere?cate=<%=m%>"><div class="partypic" name="wor">
 <div id="world" align="center"></div>
 </div><div class="pictitle">세 계  &nbsp;&nbsp; 음 식</div>
 </a>
 </div>
 
 <div class="picbox">
-<a href="partycate.do?cate=<%=n%>"><div class="partypic" name="what">
+<a href="partycatere?cate=<%=n%>"><div class="partypic" name="what">
 <div id="whatever" align="center"></div>
 </div><div class="pictitle">뷔   &nbsp;&nbsp;&nbsp; 페</div>
 </a>

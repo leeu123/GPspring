@@ -10,25 +10,22 @@ select nick from membership where id = #{id} and pw = #{pw};
 
 	<!-- 파티 찾아오기 -->
 	<!-- 진행중인 파티 정보 찾아오기 -->
-	<select id="selectParty" parameterType="Integer" resultType="pt">
+	<select id="partyinfo" parameterType="Integer" resultType="pt">
 		select * from party where pnum = #{pnum} and pdate > now() order by
 		pnum desc;
 	</select>
 	<!-- 진행중인 파티 list 불러오기 -->
-	<select id="selectlistParty" parameterType="String"
-		resultType="pt">
+	<select id="partycate" parameterType="String" resultType="pt">
 		select * from party where cate = #{cate} and pdate > now()
 		order by pnum desc;
 	</select>
 	<!-- 완료된 파티 정보 불러오기 -->
-	<select id="selectPartyre" parameterType="Integer"
-		resultType="pt">
+	<select id="partyinfore" parameterType="Integer" resultType="pt">
 		select * from party where pnum = #{pnum} and now() > pdate
 		order by pnum desc;
 	</select>
 	<!-- 완료된 파티 list 불러오기 -->
-	<select id="selectlistPartyre" parameterType="String"
-		resultType="pt">
+	<select id="partycatere" parameterType="String" resultType="pt">
 		select * from party where cate = #{cate} and now() > pdate
 		order by pnum desc;
 	</select>
@@ -103,11 +100,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 		restaurant where resdat.rnum = restaurant.rnum and restaurant.type='한식' group 
 		by rnum order by avg(pyung) desc limit 10; -->
 	<select id="masjipkor" resultType="rs">
-		select rnum,(select
-		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
-    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
-		restaurant where type = '한식' order by avg_pyung desc limit 10;
+		select rnum,(select	avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as avg_pyung, (select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from restaurant where type = '한식' order by avg_pyung desc limit 10;
 	</select>
 
 	<!-- 중식 맛집 베스트 평점 순 --><!-- select resdat.rnum, avg(pyung) as avg_pyung from resdat inner join 
@@ -146,7 +140,7 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<!-- 세계음식 맛집 베스트 평점 순 --><!-- select resdat.rnum, avg(pyung) as avg_pyung from resdat inner join 
 		restaurant where resdat.rnum = restaurant.rnum and restaurant.type='세계음식' 
 		group by rnum order by avg(pyung) desc limit 10; -->
-	<select id="selectmasjipworld" resultType="rs">
+	<select id="masjipworld" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
 		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
@@ -157,7 +151,7 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<!-- 뷔페 맛집 베스트 평점 순 --><!-- select resdat.rnum, avg(pyung) as avg_pyung from resdat inner join 
 		restaurant where resdat.rnum = restaurant.rnum and restaurant.type='뷔페' group 
 		by rnum order by avg(pyung) desc limit 10; -->
-	<select id="selectmasjipwhat" resultType="rs">
+	<select id="masjipwhat" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
 		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
@@ -167,7 +161,7 @@ select nick from membership where id = #{id} and pw = #{pw};
 
 
 	<!-- 조회수 순 top 10 -->
-	<select id="selectViewtop" resultType="ad">
+	<select id="masjipviewtop" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
 		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
@@ -313,17 +307,16 @@ select nick from membership where id = #{id} and pw = #{pw};
 
 	<!-- 서울 맛집 베스트 10 -->
 	<select id="masjipseoul" resultType="rs">
-		select rnum,(select
-		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
-		restaurant where location = '서울' order by avg_pyung desc limit 10;
+		select rnum,(select avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from restaurant where location = '서울' order by avg_pyung desc limit 10;
 	</select>
 
 	<!-- 대전 맛집 베스트 10 -->
 	<select id="masjipdj" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung, (select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '대전' order by avg_pyung desc limit 10;
 	</select>
 
@@ -331,7 +324,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipgj" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung, (select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent,store, postnum, home, dethome, file, readcount from
 		restaurant where location = '광주' order by avg_pyung desc limit 10;
 	</select>
 
@@ -339,7 +333,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipbs" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '부산' order by avg_pyung desc limit 10;
 	</select>
 
@@ -347,7 +342,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipkk" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '경기' order by avg_pyung desc limit 10;
 	</select>
 
@@ -355,7 +351,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipkw" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung, (select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent,store, postnum, home, dethome, file, readcount from
 		restaurant where location = '강원' order by avg_pyung desc limit 10;
 	</select>
 
@@ -363,7 +360,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipcb" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '충북' order by avg_pyung desc limit 10;
 	</select>
 
@@ -371,7 +369,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipcn" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung, (select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent,store, postnum, home, dethome, file, readcount from
 		restaurant where location = '충남' order by avg_pyung desc limit 10;
 	</select>
 
@@ -430,7 +429,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipic" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '인천' order by avg_pyung desc limit 10;
 	</select>
 
@@ -438,7 +438,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipsj" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '세종' order by avg_pyung desc limit 10;
 	</select>
 
@@ -446,7 +447,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipus" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '울산' order by avg_pyung desc limit 10;
 	</select>
 
@@ -454,7 +456,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipkn" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '경남' order by avg_pyung desc limit 10;
 	</select>
 
@@ -462,7 +465,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipkb" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '경북' order by avg_pyung desc limit 10;
 	</select>
 
@@ -470,7 +474,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipdg" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '대구' order by avg_pyung desc limit 10;
 	</select>
 
@@ -478,7 +483,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipjn" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '전남' order by avg_pyung desc limit 10;
 	</select>
 
@@ -486,7 +492,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipjb" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '전북' order by avg_pyung desc limit 10;
 	</select>
 
@@ -494,7 +501,8 @@ select nick from membership where id = #{id} and pw = #{pw};
 	<select id="masjipjj" resultType="rs">
 		select rnum,(select
 		avg(resdat.pyung) from resdat where resdat.rnum = restaurant.rnum) as
-		avg_pyung, store, postnum, home, dethome, file, readcount from
+		avg_pyung,(select nick from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as nick,
+    (select dcontent from resdat where resdat.rnum = restaurant.rnum order by pyung limit 1) as dcontent, store, postnum, home, dethome, file, readcount from
 		restaurant where location = '제주' order by avg_pyung desc limit 10;
 	</select>
 

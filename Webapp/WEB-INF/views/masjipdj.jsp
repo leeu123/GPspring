@@ -10,8 +10,9 @@
 <!-- ===================================================== -->
 
 
+
 <head>
-<title>일식 베스트 10</title>
+<title>대전 인기 맛집 TOP 10</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="gp/css/gpstylemasjip.css">
 <link rel="stylesheet" type="text/css" href="gp/css/loginstyle.css" />
@@ -38,8 +39,8 @@
 
 	<div style="width: 100%; height: 86px;"></div>
 	<article style="background-color: #eaeaea; text-align: center;">
-		<h1 style="margin: 70px 0px 0px 0px; font-size: 1.5cm; color: black;">일식 베스트 10</h1>
-		<h3 style="color: #8C8C8C;">"이 시국에?"</h3>
+		<h1 style="margin: 70px 0px 0px 0px; font-size: 1.5cm; color: black;">대전 인기 맛집 TOP 10</h1>
+		<h3 style="color: #8C8C8C;">"대전 성심당 말고 맛집!"</h3>
 	</article>
 	<section style="background: #f6f6f6;">
 		<div id="mat">
@@ -109,12 +110,22 @@ String color;
 						<tr style="height: 30px;">
 							<td colspan="3"></td>
 						</tr>
+
 						<%
 							}
 						%>
 						<tr style="height: 50px;">
 							<td colspan="3"></td>
 						</tr>
+
+
+
+
+
+
+
+
+
 
 						<tr>
 							<td colspan="3">
@@ -155,9 +166,7 @@ var listRnum=[
 		<%}%>
 	
 	
-	
 ];
-
 
 listData.forEach(function(addr, index) {
     geocoder.addressSearch(addr, function(result, status) {
@@ -199,7 +208,6 @@ listData.forEach(function(addr, index) {
 
 							</td>
 						</tr>
-						
 						<tr style="height:50px;"><td colspan="3"></td></tr>
 					</table>
 				</div>

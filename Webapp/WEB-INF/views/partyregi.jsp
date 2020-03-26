@@ -1,18 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
-     String id1= null;
-     String nick1 =null;
+
      
     if(session.getAttribute("id")==null){
     	out.println("<script>");
 		out.println("alert('로그인이 필요합니다..');");
 		out.println("location.href='loginpage'");
 		out.println("</script>");
-    }else{
-    
-    id1 = (String)session.getAttribute("id");
-    nick1 = (String)session.getAttribute("nick");
     }
 
 %>
@@ -42,13 +37,13 @@
 
 <link rel="stylesheet" type="text/css" href="gp/css/Icomoon/style.css" />
 <link rel="stylesheet" type="text/css" href="gp/css/animated-header.css" />
-<script type="text/javascript" src="_scripts/jquery-2.0.2.min.js"></script>
-<script type="text/javascript" src="_scripts/jquery-ui-1.10.4.min.js"></script>
-<script type="text/javascript" src="_scripts/jquery.isotope.min.js"></script>
-<script type="text/javascript" src="_scripts/animated-header.js"></script>
+<script type="text/javascript" src="gp/_scr/jquery-2.0.2.min.js"></script>
+<script type="text/javascript" src="gp/_scripts/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="gp/_scripts/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="gp/_scripts/animated-header.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="_scripts/login.js"></script>
-<script type="text/javascript" src="scripts/partyregi.js"></script>
+<script type="text/javascript" src="gp/_scripts/login.js"></script>
+<script type="text/javascript" src="gp/scripts/partyregi.js"></script>
 <link
 	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
 	rel="stylesheet" type="text/css" />
@@ -190,14 +185,15 @@
 	<%@include file = "header.jsp"%>
 
 	<section>
-		<form name="party" action="partyregi.do" method="post" enctype="multipart/form-data">
+		<form name="party" action="partyregist" method="post" enctype="multipart/form-data">
 		<input type="hidden" id="id" name="id" value="<%=id%>">
 		<input type="hidden" id="nick" name="nick" value="<%=nick%>">
 			<div style="width: 1900px; height: 86px;"></div>
 			<article></article>
 			<div id="ptitle">
 
-				<img src="img/ptitle.jpg" width="1900px;" height="58px;">
+				<img src="gp/img/ptitle.jpg" width="1900px;" height="58px;"><br>
+				
 			</div>
 			<table>
 				<tbody>
