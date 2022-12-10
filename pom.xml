@@ -9,7 +9,7 @@
 
 	<!-- 필수 적으로 추가해 줘야할 dependencies -->
 	<properties>
-		<org.springframework-version> 4.2.1.RELEASE </org.springframework-version>
+		<org.springframework-version>6.0.0</org.springframework-version>
 	</properties>
 
 
@@ -111,7 +111,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>4.3.4.RELEASE</version>
+			<version>6.0.0</version>
 		</dependency>
 		<!-- Add it if you need. -->
 		<dependency>
